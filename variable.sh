@@ -8,5 +8,5 @@ exec &> "$log_file"
 curl --header "Authorization: Bearer $TF_API_TOKEN" \
      --header "Content-Type: application/vnd.api+json" \
      --request PUT \
-     --data @JSON \
+     --data @payload.json \
      "https://app.terraform.io/api/v2/organizations/$ORGANIZATION/workspaces/$WORKSPACE"
