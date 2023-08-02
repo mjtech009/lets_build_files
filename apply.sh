@@ -1,3 +1,8 @@
+#!/bin/bash -ex
+rm -rf apply_logs.*
+timestamp=$(date +"%Y-%m-%d-%H-%M-%S")
+log_file="apply_logs_$timestamp.txt"
+exec &> "$log_file"
 curl \
   --header "Authorization: Bearer $TOKEN" \
   --header "Content-Type: application/vnd.api+json" \
